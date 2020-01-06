@@ -5,16 +5,17 @@ using UnityEngine.EventSystems;
 
 public class EventSystemChecker : MonoBehaviour
 {
-    public GameObject eventSystem;
+    //public GameObject eventSystem;
 
 	// Use this for initialization
-	IEnumerator Start ()
+	void Awake ()
 	{
-	    yield return new WaitForEndOfFrame();
-
-        if (!FindObjectOfType<EventSystem>())
+	    if(!FindObjectOfType<EventSystem>())
         {
-           Instantiate(eventSystem);
+           //Instantiate(eventSystem);
+            GameObject obj = new GameObject("EventSystem");
+            obj.AddComponent<EventSystem>();
+            obj.AddComponent<StandaloneInputModule>().forceModuleActive = true;
         }
 	}
 }
