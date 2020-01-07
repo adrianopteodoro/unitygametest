@@ -6,12 +6,12 @@ public class DayNightTransition : MonoBehaviour
 	public Color dayColor;
 	public Color nightColor;
 
-	float duration = 50f;
+	public float duration = 50f;
 	float lastTime;
 	Light lt;
-	bool isDay;
-	float speed = 0.3f;
-	Color color;
+	public bool isDay;
+	public float speed = 0.3f;
+	public Color color;
 	Quaternion rot;
 
 	void Awake()
